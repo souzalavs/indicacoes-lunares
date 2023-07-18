@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+    <div class="category-container">
+        <p class="subtitle"> "Sempre imaginei que o paraíso fosse uma espécie de livraria." - Jorge Luis Borges </p>
+        <h2 class="category-h2"> Livros de {{category}}</h2>
+        <div class="redirect-container">
+            <form action="{% url 'search' %}" >
+                <input type="text" name="search" class="search-input" placeholder="Pesquisar Livro Por Título">
+                <button type="submit" class="search-icon">
+                    <img class="search-icon-image" src="{% static '/images/search-icon.png' %}">
+                </button>
+            </form>
+            <form>
+                <label class="label-redirect">Mudar categoria:</label>
+                <select onchange="window.location.href = this.value;" class="select">
+                    {% for category in categories %}
+                    <option value="{% url 'category' category %}">
+                        {{category}}
+                    </option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <div class="books-list">
+            {% if books %}
+            {% for book in books %}
+            <li>
+                <a href="{% url 'book' book.id %}" class="book-name">{{book.title}}</a>
+            </li>
+            {% endfor %}
+            {% else %}
+            <div>
+                <p class="not-found-books"> Ainda não há indicação nessa categoria! </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

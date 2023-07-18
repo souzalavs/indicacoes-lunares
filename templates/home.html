@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container-home">
+        <div class="indicate">
+            <h2>Adicione sua indicação mágica para outros leitores de acordo com a categoria!</h2>
+            <button type="button" class="indication-button">
+                <a href="{% url 'indication' %}" class="indication-link">Clique aqui para fazer uma indicação mágica!</a>
+            </button>
+        </div>
+        <nav class="categories">
+            {% for category in categories%}
+            <li class="item">
+                <a href="{% url 'category' category %}" class="categories_link">{{category}}</a>
+            </li>
+            {% endfor %}
+        </nav>
+        <p class="last-indications">Últimas Indicações</p>
+        <div class="carousel-container">
+            <ul class="carousel">
+                {% if carousel %}
+                {% for book in carousel %}
+                <li class="book">
+                    <span class="book-tag">{{book.category}}</span>
+                    <a href="{% url 'book' book.id %}">
+                        <img class="book-image" src="{{ book.cover.url }}">
+                    </a>
+                    <div class="book-info">
+                        <p class="book-title">{{book.title}}</p>
+                        <p class="book-author">{{book.author}}</p>
+                    </div>
+                </li>
+                {% endfor %}
+                {% else %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

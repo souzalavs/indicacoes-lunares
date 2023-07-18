@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="info-container">
+        {% if book %}
+            <img class="info-cover" src="{{ book.cover.url }}">
+            <div class="general-data">
+                <p class="info-title">{{book.title}}</p>
+                <p class="info-author">Autor: {{book.author}}</p>
+                <p class="info-category">Gênero: {{book.category}}</p>
+                <p class="info-synopsis">{{book.synopsis}}</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

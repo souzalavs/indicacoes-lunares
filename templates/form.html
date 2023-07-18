@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+    <div class="form-container">
+        <h2 class="form-h2">Preencha as informações para indicar um livro!</h2>
+        <div class="form">
+            {% if messages %}
+                {% for message in messages %}
+                <div class="messages">
+                    {{message}}
+                </div>
+                {% endfor %}
+            {% endif %}
+            <form action="{% url 'indication' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div>
+                    {% for field in form.visible_fields %}
+                    <div class="form-fields">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{field.label}}</label>
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="form-button-div">
+                    <button type="submit" class="form-button">Enviar Indicação</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+            
+    

@@ -1,0 +1,439 @@
+/* base css */
+body {
+  width: auto;
+  background-image: url('/static/images/background.jpg');
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+header {
+  width: auto;
+  display: grid;
+  grid-template-columns: auto 50% 25%;
+  margin-bottom: 10px;
+}
+
+.logo {
+  padding: 20px;
+  width: 40%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+  
+h1 {
+  font-family: 'Cookie', cursive;
+  color: white;
+  font-size: 3.75rem;
+  text-align: center;
+  padding-top: 10%;
+}
+
+/* home css */
+.indicate{
+  padding: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Cookie', cursive;
+  font-size: 2rem;
+  padding: 10px;
+  width: 900px;
+  height: 20px;
+  color: white;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.indication-button{
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 35px;
+  border: none;
+  background-color: rgb(142, 11, 168);
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.indication-button:hover {
+  background-color: rgb(208, 35, 231);
+}
+
+.indication-link {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: small;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  font-family: 'Quicksand', sans-serif;
+  padding-top: 60px;
+  padding-left: 220px;
+  margin: 0;
+}
+
+.item {
+  display: inline-block; 
+  margin: 0px 5px; 
+  padding: auto;
+  max-width: 250px;
+  min-width: 250px;
+}
+
+.categories li::before {
+  content: '';   
+  display: inline-block;   
+  height: 45px;   
+  width: 45px;    
+  background-size: 45px;   
+  background-image: url('/static/images/magic-book.gif');   
+  background-repeat: no-repeat;   
+  margin-right: 10px;
+  background-position: center center;
+  vertical-align: middle;
+}
+
+.categories_link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(250, 216, 255);
+}
+
+.categories_link:visited {
+  color: black;
+}
+
+.categories_link:hover {
+  color: hotpink;
+}
+
+.last-indications {
+  font-family: 'Cookie', cursive;
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+  padding: 40px;
+}
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  flex-flow: nowrap;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+  justify-content: space-between;
+  gap: 30px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.carousel::-webkit-scrollbar{
+  height: 5px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(222, 145, 238, 0.788);
+  border-radius: 5px;
+}
+
+.book {
+  border-radius: 10px;
+}
+
+.book-tag {
+  font-family: 'Quicksand', sans-serif;
+  background-color: rgb(140, 19, 177);
+  border-radius: 4px;
+  color: white;
+  border: 2px solid transparent;
+  font-size: 0.6rem;
+  padding: .2rem .2rem;
+  position: relative;
+  top: 20px;
+  width: 100px;
+  text-align: center;
+}
+
+.book-image {
+  border: 3px solid rgba(222, 145, 238, 0.788);
+  flex-direction: column;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.book-info {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+  min-height: 80px;
+  margin-bottom: 20px;
+}
+
+.book-title {
+  font-size: small;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.book-author {
+  font-family: 'Cookie', cursive;
+  padding-top: 10px;
+}
+
+/* form css */
+
+.form-container {
+  margin: auto auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 30px auto 80px;
+  width: auto;
+}
+
+.form {
+  background-color: rgba(29, 0, 61, 0.726);
+  border-radius: 10px;
+  width: 70%;
+  padding-top: 50px;
+}
+
+.messages {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  border-radius: 8px;
+  margin: 0 0 20px 100px;
+  background-color: rgba(162, 0, 255, 0.61);
+  padding: 10px;
+  width: 30%;
+}
+
+.form-fields {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-label {
+  font-size: medium;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  width: 80px; 
+  text-align: left; 
+  margin-right: 10px;
+}
+
+.form input, textarea, select {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 10px;
+  margin: 10px 0 10px;
+  width: 70%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.603);
+}
+
+.form-button-div {
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.form-button {
+  font-family: 'Quicksand', sans-serif;
+  font-size: medium;
+  padding: 10px;
+  cursor: pointer;
+  width: 35%;
+  color: white;
+  background-color: rgba(137, 43, 226, 0.781);
+}
+
+/* category css */
+
+.category-container {
+  width: 70%;
+  margin: 40px auto 60px auto;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-family: 'Cookie', cursive;
+  font-size: xx-large;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 900px;
+  height: 20px;
+  color: white;
+  text-align: center;
+}
+
+.category-h2{
+  font-size: 30px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  padding: 40px 0 70px;
+}
+
+.redirect-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  background-color: rgba(255, 255, 255, 0.616);
+  font-size: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  height: 20px;
+  width: 250px;
+}
+
+::placeholder {
+  padding: 10px;
+  font-family: 'Quicksand', sans-serif;
+  color: #000000a3;
+}
+
+.search-icon {
+  background-color: rgba(255, 255, 255, 0.616);
+  border-radius: 10px; 
+}
+
+.search-icon-image {
+  cursor: pointer;
+  width: 0.9rem;
+}
+
+.label-redirect {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  padding: 8px;
+  font-size: 17px;
+}
+
+.select {
+  border-radius: 10px;
+  height: 24px;
+  width: 200px;
+  margin: auto;
+}
+
+.books-list {
+  background-color: rgba(29, 0, 61, 0.726);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  font-weight: bold;
+  color: rgb(250, 216, 255);
+  padding: 30px 50px 30px 50px;
+}
+
+.books-list li::before {
+  content: '';   
+  display: inline-block;   
+  height: 30px;   
+  width: 30px;    
+  background-size: 30px;   
+  background-image: url('/static/images/book-list.png');   
+  background-repeat: no-repeat;   
+  margin: 0 10px 0 40px;
+  background-position: center center;
+  vertical-align: middle;
+}
+
+.book-name {
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  display: inline-block; 
+  margin: 10px 5px 10px 0; 
+  padding: auto;
+}
+
+.book-name:visited {
+  color: rgb(192, 97, 255);
+}
+
+.book-name:hover {
+  color: rgba(255, 105, 180, 0.856);
+}
+
+.not-found-books {
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+}
+
+/* info css */
+.info-container{
+  background-color: rgba(29, 0, 61, 0.726);
+  width: 70%;
+  margin: auto auto 60px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.info-cover{
+  margin: 40px;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: 6px groove rgba(255, 255, 255, 0.699);
+}
+
+.general-data {
+  margin-right: 30px;
+  display: inline-block;
+  color: white;
+}
+
+.info-title {
+  font-family: 'Cookie', cursive;
+  margin: 30px;
+  font-size: 45px;
+  text-align: center;
+}
+
+.info-author {
+  font-family: 'Quicksand', sans-serif;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.info-category {
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.info-synopsis {
+  font-family: 'Quicksand', sans-serif;
+  margin: 30px auto 40px;
+  text-align: justify;
+}
